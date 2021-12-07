@@ -1,0 +1,15 @@
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: voorbeeld-app
+  labels:
+    app: voorbeeld-app
+spec:
+  selector:
+    app: voorbeeld-app
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080

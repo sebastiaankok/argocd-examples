@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: voorbeeld-app-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: example.boltguard.nl
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: voorbeeld-app
+              port:
+                number: 8080
